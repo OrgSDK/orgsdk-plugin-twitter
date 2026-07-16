@@ -1,0 +1,33 @@
+{
+	"$schema": "https://orgsdk.ai/schemas/plugin-manifest.v1.json",
+	"name": "twitter",
+	"version": "1.0.2",
+	"description": "Twitter/X posting and analytics: tweets, threads, engagement metrics",
+	"entry": "index.ts",
+	"auth": {
+		"type": "oauth2",
+		"provider": "twitter-oauth",
+		"label": "X (Twitter) OAuth",
+		"hint": "Create an OAuth 2.0 app at developer.twitter.com; scopes cover tweet read/write, users.read, and offline.access.",
+		"scopes": ["tweet.read", "tweet.write", "users.read", "offline.access"],
+		"callbackPath": "/callback"
+	},
+	"marketplace": {
+		"displayName": "X",
+		"category": "Social",
+		"tagline": "Post to X (Twitter) and track engagement from agent workflows — tweets, threads, and analytics on a schedule.",
+		"tags": ["social", "posting", "analytics"],
+		"useCases": [
+			"Draft and post tweets on a schedule",
+			"Post a thread from long-form content",
+			"Track engagement metrics across posts",
+			"Reply or quote-tweet from a queue"
+		],
+		"permissionsSummary": "Post, delete, and read analytics for tweets via X OAuth. Posting and deleting are public, mutating actions; deletes are irreversible.",
+		"links": {
+			"homepage": "https://x.com",
+			"docs": "https://developer.x.com/en/docs",
+			"sourceRepo": "https://github.com/OrgSDK/orgsdk-plugin-twitter"
+		}
+	}
+}
