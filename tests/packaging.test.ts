@@ -73,7 +73,7 @@ describe("packaging", () => {
 		>;
 
 		expect(pkg.name).toBe("@orgsdk/plugin-twitter");
-		expect(pkg.version).toBe("1.0.2");
+		expect(pkg.version).toBe("1.0.3");
 		expect(pkg.type).toBe("module");
 		// Twitter has no runtime dependencies (globals only).
 		expect(pkg.dependencies).toBeUndefined();

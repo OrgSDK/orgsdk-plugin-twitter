@@ -1,4 +1,5 @@
 import type { SafeFunction } from "@orgsdk/plugins";
+import { fetchJson } from "./http-client";
 import { getTwitterAccessToken } from "./oauth";
 
 export const moduleDescription =
@@ -45,19 +46,11 @@ async function twFetch(
 		"Content-Type": "application/json",
 	};
 
-	const resp = await fetch(url, {
+	return fetchJson(url, {
 		method: options?.method ?? "GET",
 		headers,
 		body: options?.body ? JSON.stringify(options.body) : undefined,
 	});
-
-	if (!resp.ok) {
-		const errText = await resp.text();
-		throw new Error(`Twitter API error ${resp.status}: ${errText}`);
-	}
-
-	if (resp.status === 204) return null;
-	return resp.json();
 }
 
 // ─── Safe Functions ─────────────────────────────────────────────────────
