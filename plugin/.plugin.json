@@ -1,7 +1,7 @@
 {
 	"$schema": "https://orgsdk.ai/schemas/plugin-manifest.v1.json",
 	"name": "twitter",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Twitter/X posting and analytics: tweets, threads, engagement metrics",
 	"entry": "index.ts",
 	"auth": {
